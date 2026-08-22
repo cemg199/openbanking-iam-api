@@ -1,0 +1,4 @@
+fastapi==0.139.2
+PyJWT==2.13.0
+requests==2.34.2
+uvicorn==0.51.0
