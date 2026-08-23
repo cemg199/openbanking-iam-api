@@ -23,35 +23,19 @@ The project demonstrates the distinction between:
 
 ## Architecture
 
-```text
-+----------------------+
-|       Client         |
-|  Swagger / Postman   |
-+----------+-----------+
-           |
-           | Access Token (JWT)
-           v
-+----------------------+
-|   OpenBanking API    |
-|       FastAPI        |
-+----------+-----------+
-           |
-           | JWT validation
-           | Issuer validation
-           | JWKS signature verification
-           | RBAC
-           v
-+----------------------+
-|       Keycloak       |
-| OAuth 2.0 / OIDC IAM |
-+----------------------+
-```
+## Architecture
+
+The following diagram illustrates the authentication and authorization architecture of the OpenBanking IAM API:
+
+![OpenBanking IAM API Architecture](diagrams/openbanking-architecture.png)
 
 The FastAPI container communicates with Keycloak through the internal Docker network using:
 
 ```text
 http://keycloak:8080
 ```
+
+The architecture separates the API from the Identity and Access Management service. Keycloak handles authentication and token issuance, while FastAPI validates JWTs and enforces authorization through the `customer` realm role.
 
 ---
 
