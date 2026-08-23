@@ -73,7 +73,7 @@ The architecture separates the API from the Identity and Access Management servi
 ## Project Structure
 
 ```text
-openBanking-iam-api/
+openbanking-iam-api/
 │
 ├── app/
 │   ├── __init__.py
