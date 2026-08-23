@@ -21,7 +21,6 @@ The project demonstrates the distinction between:
 
 ---
 
-## Architecture
 
 ## Architecture
 
