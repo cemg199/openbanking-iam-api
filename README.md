@@ -361,6 +361,7 @@ Bob may possess a valid JWT but does not have the required `customer` role.
 Bob → Valid JWT → no customer role → /balance → 403 Forbidden
 ```
 
+
 ---
 
 ## JWT Validation
@@ -376,6 +377,37 @@ http://keycloak:8080/realms/OpenBanking
 ```
 
 Audience validation is currently disabled and is listed as a future security improvement.
+
+
+
+### Security Test Evidence
+
+The decoded access token for the authorized test user contains the required `customer` role in the `realm_access` claim:
+
+<p align="center">
+  <img src="screenshots/03-jwt-customer-role.png"
+       alt="Decoded JWT containing the customer realm role"
+       width="500">
+</p>
+
+
+<table>
+  <tr>
+    <th>Authorized User</th>
+    <th>Modified JWT</th>
+    <th>Missing Role</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/04-alice-200-ok.png" alt="Alice authorized request"></td>
+    <td><img src="screenshots/05-modified-jwt-401.png" alt="Modified JWT rejected"></td>
+    <td><img src="screenshots/06-bob-403-forbidden.png" alt="Bob forbidden request"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>200 OK</strong><br>Valid JWT + customer role</td>
+    <td align="center"><strong>401 Unauthorized</strong><br>Invalid JWT signature</td>
+    <td align="center"><strong>403 Forbidden</strong><br>Valid JWT, no customer role</td>
+  </tr>
+</table>
 
 ---
 
