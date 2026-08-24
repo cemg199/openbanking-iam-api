@@ -394,18 +394,47 @@ The decoded access token for the authorized test user contains the required `cus
 <table>
   <tr>
     <th>Authorized User</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshots/04-alice-200-ok.png"
+           alt="Alice authorized request"
+           width="700">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>200 OK</strong><br>
+      Valid JWT + customer role
+    </td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
     <th>Modified JWT</th>
     <th>Missing Role</th>
   </tr>
   <tr>
-    <td><img src="screenshots/04-alice-200-ok.png" alt="Alice authorized request"></td>
-    <td><img src="screenshots/05-modified-jwt-401.png" alt="Modified JWT rejected"></td>
-    <td><img src="screenshots/06-bob-403-forbidden.png" alt="Bob forbidden request"></td>
+    <td width="50%">
+      <img src="screenshots/05-modified-jwt-401.png"
+           alt="Modified JWT rejected">
+    </td>
+    <td width="50%">
+      <img src="screenshots/06-bob-403-forbidden.png"
+           alt="Bob forbidden request">
+    </td>
   </tr>
   <tr>
-    <td align="center"><strong>200 OK</strong><br>Valid JWT + customer role</td>
-    <td align="center"><strong>401 Unauthorized</strong><br>Invalid JWT signature</td>
-    <td align="center"><strong>403 Forbidden</strong><br>Valid JWT, no customer role</td>
+    <td align="center">
+      <strong>401 Unauthorized</strong><br>
+      Invalid JWT signature
+    </td>
+    <td align="center">
+      <strong>403 Forbidden</strong><br>
+      Valid JWT, no customer role
+    </td>
   </tr>
 </table>
 
